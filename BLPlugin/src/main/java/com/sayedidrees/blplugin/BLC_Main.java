@@ -150,13 +150,12 @@ public class BLC_Main {
 
         Log.d(TAG, "StartServer: Checking Bleutoth$$$");
         if (!mbluetoothAdapter.isEnabled()) {
-            Log.d(TAG, "StartServer: Bluetoothe is Disabled");
+            Log.d(TAG, "StartServer: Bluetooth is Disabled");
             mbluetoothAdapter.enable();
         }
 
         if (!mbluetoothAdapter.isEnabled())
-        {
-             mbluetoothAdapter.enable();
+        {  mbluetoothAdapter.enable();
         }else
         {
             myConnectorManager = new projectBTController(mContext, mhandler);
@@ -167,7 +166,7 @@ public class BLC_Main {
 
         if (myConnectorManager != null) {
             if (myConnectorManager.getState() == projectBTController.STATE_NONE) {
-                Log.d(TAG, "StartServer: Server Started Lsitening!");
+                Log.d(TAG, "StartServer: Server Started Listening!");
                 myConnectorManager.startListening();
             }else
             {
