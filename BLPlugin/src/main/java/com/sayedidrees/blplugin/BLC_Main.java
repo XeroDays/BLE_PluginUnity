@@ -234,6 +234,14 @@ public class BLC_Main {
         return isEnabled;
     }
 
+    private void closeAll()
+    {
+        Log.d(TAG, "closeConn:  Server All connection Closed" );
+       myConnectorManager.stop();
+
+    }
+
+
     //endregion
 
 
