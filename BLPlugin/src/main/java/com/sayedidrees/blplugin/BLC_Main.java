@@ -255,8 +255,12 @@ public class BLC_Main {
             if (BluetoothDevice.ACTION_FOUND.equals(action))
             {
                 BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
+                if (device.getName()==null || device.getName().isEmpty()){
+                    Log.d(TAG, "onReceive: Null pointer Controlled");
+                    return;}
+
                 mNewBTDevices.add(device);
-                Log.d(TAG, "onReceive: New Device Found! Name : " + device.getName());
+                Log.d(TAG, "onReceive: Device Found!! Name : " + device.getName());
                 myResponder.onDeviceFound(device);
                 // this is when you want to separate the Bonded devices from the New Devices.
                 /* if (device.getBondState() != BluetoothDevice.BOND_BONDED) {
