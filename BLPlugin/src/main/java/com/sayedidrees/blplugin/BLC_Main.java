@@ -256,7 +256,7 @@ public class BLC_Main {
             {
                 BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
                 if (device.getName()==null || device.getName().isEmpty()){
-                    Log.d(TAG, "onReceive: Null pointer Controlled");
+                    Log.d(TAG, "onReceive: Null   pointer Controlled");
                     return;}
 
                 mNewBTDevices.add(device);
